@@ -1,7 +1,7 @@
 # Dockerfile
 
 # Base image
-FROM node:18-alpine
+FROM node:latest
 
 # Set working directory
 WORKDIR /app
@@ -17,7 +17,7 @@ RUN npm install
 COPY . .
 
 # Build the Angular app
-RUN ng build --configuration=development
+RUN ng build --configuration=production
 
 # Install serve to serve static build
 RUN npm install -g serve
@@ -26,4 +26,4 @@ RUN npm install -g serve
 EXPOSE 4200
 
 # Serve the built app
-CMD ["serve", "-s", "dist/angular_test", "-l", "4200"]
+CMD ["serve", "-s", "dist/angular_test", "-l", "4200", "--single"]
