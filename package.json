@@ -1,13 +1,10 @@
 {
-  "name": "angular-test-project",
+  "name": "angular_test",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:angular_test_project": "node dist/angular_test_project/server/server.mjs"
+    "serve": "webpack serve --config config/webpack.dev.js --mode development",
+    "build": " webpack --config config/webpack.prod.js --mode production"
   },
   "private": true,
   "dependencies": {
@@ -29,15 +26,25 @@
     "@angular-devkit/build-angular": "^19.2.5",
     "@angular/cli": "^19.2.5",
     "@angular/compiler-cli": "^19.2.0",
+    "@babel/core": "^7.26.10",
+    "@babel/plugin-transform-runtime": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
     "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",
+    "babel-loader": "^10.0.0",
+    "css-loader": "^7.1.2",
     "jasmine-core": "~5.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.7.2"
+    "style-loader": "^4.0.0",
+    "typescript": "~5.7.2",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1",
+    "webpack-merge": "^6.0.1"
   }
 }

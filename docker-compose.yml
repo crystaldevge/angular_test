@@ -1,0 +1,13 @@
+services:
+  angular_test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: archilitav/angular_test:latest
+    container_name: angular_test
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "4200:4200"  
+    command: sh -c "npm install && ng serve"
