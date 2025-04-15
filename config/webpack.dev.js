@@ -27,7 +27,7 @@ const devConfig = {
             name: 'angulartest',
             filename: 'remoteEntry.js',
             exposes: {
-                './AngularTestApp': './src/bootstrap',
+                './AngularTestApp': './src/main',
             },
             shared: packageJson.dependencies,
         }),

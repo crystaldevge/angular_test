@@ -1,29 +1,15 @@
-# Dockerfile
-
-# Base image
-FROM node:latest
-
-# Set working directory
+# Stage 1
+FROM node:18-alpine AS build
 WORKDIR /app
-
-# Install global Angular CLI
-RUN npm install -g @angular/cli
-
-# Copy dependencies
 COPY package*.json ./
 RUN npm install
-
-# Copy the rest of the code
 COPY . .
+RUN npm run build --configuration=production
 
-# Build the Angular app
-RUN ng build --configuration=production
-
-# Install serve to serve static build
-RUN npm install -g serve
-
-# Expose default Angular port
-EXPOSE 4200
-
-# Serve the built app
-CMD ["serve", "-s", "dist/angular_test", "-l", "4200", "--single"]
+# Stage 2
+FROM nginx:alpine
+RUN rm -rf /usr/share/nginx/html/*
+COPY --from=build /app/dist/angular_test/browser /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
