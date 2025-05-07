@@ -1,7 +1,4 @@
-import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
-import { HelloWorldComponent } from './app/hello-world/hello-world.component';
+// import '@angular/compiler'
+// import 'zone.js';  // Add this at the top
 
-bootstrapApplication(HelloWorldComponent, appConfig)
-  .catch((err) => console.error(err));
+import ('./bootstrap')
