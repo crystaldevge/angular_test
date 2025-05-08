@@ -30,6 +30,9 @@ const devConfig = {
       exposes: {
         './AngularTestApp': './src/bootstrap',
       },
+      remotes: {
+        dashboard_test: 'dashboard_test@http://localhost:3005/remoteEntry.js',
+      },
       shared: packageJson.dependencies,
     }),
     new AngularWebpackPlugin({

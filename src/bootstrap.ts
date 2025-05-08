@@ -5,6 +5,7 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
 import { HelloWorldComponent } from './app/hello-world/hello-world.component';
 
+
 export const mount = (el: Element) => {
   const hostElem = document.createElement('app-hello-world');
   el.appendChild(hostElem);
