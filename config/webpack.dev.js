@@ -7,14 +7,21 @@ const { AngularWebpackPlugin } = require('@ngtools/webpack');
 const devConfig = {
   mode: 'development',
   output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, '../dist'),
     publicPath: 'http://localhost:4200/',
+    filename: '[name].[contenthash].js',
+    path: path.resolve(__dirname, '../dist'),
+    clean: true,
   },
+
   devServer: {
     static: {
       directory: path.resolve(__dirname, '../dist'),
     },
+    allowedHosts: 'all',
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
+    historyApiFallback: true,
     hot: true,
     port: 4200,
     historyApiFallback: true,

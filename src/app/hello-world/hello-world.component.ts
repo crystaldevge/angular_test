@@ -17,7 +17,6 @@ import { CommonModule } from '@angular/common';
         Click
       </button>
       <div *ngIf="isVisible">
-
         <message-component message="Hello from Angular!" type="success"></message-component>
       </div>
     </div>
@@ -36,6 +35,8 @@ export class HelloWorldComponent {
   isVisible = false;  // ✅ Bool ტიპის state
 
   toggle() {
+    
+    // ✅ State-ის შეცვლა
     this.isVisible = !this.isVisible;
   }
 

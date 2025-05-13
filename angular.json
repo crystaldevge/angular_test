@@ -30,9 +30,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/zone.js/dist/zone.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
