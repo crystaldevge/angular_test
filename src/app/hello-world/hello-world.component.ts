@@ -2,6 +2,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
+
 @Component({
   selector: 'app-hello-world',
   standalone: true,
@@ -16,6 +17,7 @@ import { CommonModule } from '@angular/common';
       >
         Click
       </button>
+      
       <div *ngIf="isVisible">
         <message-component message="Hello from Angular!" type="success"></message-component>
       </div>
@@ -39,5 +41,6 @@ export class HelloWorldComponent {
     // ✅ State-ის შეცვლა
     this.isVisible = !this.isVisible;
   }
+
 
 }
