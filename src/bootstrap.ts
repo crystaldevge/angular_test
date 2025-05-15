@@ -5,11 +5,6 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
 import { HelloWorldComponent } from './app/hello-world/hello-world.component';
 import { UsersComponent } from './app/users/users.component';
-// import 'dashboard_test/callGithubUser';
-
-
-
-
 
 
 export const mount = (el: Element) => {
