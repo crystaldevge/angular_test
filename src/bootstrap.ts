@@ -12,34 +12,34 @@ import { UsersComponent } from './app/users/users.component';
 
 
 
-// export const mount = (el: Element) => {
-//   const hostElem = document.createElement('app-hello-world');
-//   el.appendChild(hostElem);
-
-//   bootstrapApplication(HelloWorldComponent, appConfig)
-//     .catch((err) => console.error(err));
-
-// };
-
-
 export const mount = (el: Element) => {
+  const hostElem = document.createElement('app-hello-world');
+  el.appendChild(hostElem);
 
-  const userElem = document.createElement('app-users');
-  el.appendChild(userElem);
-
-  bootstrapApplication(UsersComponent, appConfig)
+  bootstrapApplication(HelloWorldComponent, appConfig)
     .catch((err) => console.error(err));
-
 
 };
 
+
+// export const mount = (el: Element) => {
+
+//   const userElem = document.createElement('app-users');
+//   el.appendChild(userElem);
+
+//   bootstrapApplication(UsersComponent, appConfig)
+//     .catch((err) => console.error(err));
+
+
+// };
+
 // Standalone mode
-// if (document.querySelector('app-hello-world')) {
-//   mount(document.querySelector('app-hello-world')!);
-//   // mount(document.querySelector('app-hello-world')!);
-// }
-
-
-if (document.querySelector('app-users')) {
-  mount(document.querySelector('app-users')!);
+if (document.querySelector('app-hello-world')) {
+  mount(document.querySelector('app-hello-world')!);
+  // mount(document.querySelector('app-hello-world')!);
 }
+
+
+// if (document.querySelector('app-users')) {
+//   mount(document.querySelector('app-users')!);
+// }

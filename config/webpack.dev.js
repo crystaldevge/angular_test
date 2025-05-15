@@ -39,6 +39,7 @@ const devConfig = {
       },
       remotes: {
         dashboard_test: 'dashboard_test@http://localhost:3005/remoteEntry.js',
+        native_app: 'native_app@http://localhost:8080/remoteEntry.js',
       },
       shared: packageJson.dependencies,
     }),

@@ -1,5 +1,6 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { createHtml } from 'native_app/NativeElement';
 
 
 
@@ -17,7 +18,7 @@ import { CommonModule } from '@angular/common';
       >
         Click
       </button>
-      
+      <div id="app"></div>
       <div *ngIf="isVisible">
         <message-component message="Hello from Angular!" type="success"></message-component>
       </div>
@@ -37,7 +38,9 @@ export class HelloWorldComponent {
   isVisible = false;  // ✅ Bool ტიპის state
 
   toggle() {
-    
+    setTimeout(() => {
+    createHtml(); // დამაჯერებლად დარწმუნდით, რომ DOM უკვე გამზადებულია
+  }, 0);
     // ✅ State-ის შეცვლა
     this.isVisible = !this.isVisible;
   }
